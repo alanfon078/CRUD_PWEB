@@ -19,20 +19,29 @@ namespace CRUD_PWEB.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> ConsumoClienteVista()
+        {
+            var contextoBD = _context.OrderDetails
+                .Include(od => od.Order)
+                    .ThenInclude(o => o.Customer)
+                .Include(od => od.Product)
+                .Select(od => new ConsumoCliente()
+                {
+                    Cliente = od.Order.Customer.CompanyName,
+                    Product = od.Product.ProductName,
+                    Cantidad = od.Quantity
+                })
+                .OrderBy(c => c.Cliente)
+                .ThenByDescending(c => c.Cantidad)
+                .ThenBy(c => c.Product);
+
+            return View(await contextoBD.ToListAsync());
+        }
+
         // GET: Products
         public async Task<IActionResult> Index()
         {
             var contextoBD = _context.Products.Include(p => p.Category).Include(p => p.Supplier);
-            return View(await contextoBD.ToListAsync());
-        }
-
-        public async Task<IActionResult> ConsumoClienteVista()
-        {
-            //Customer Product OrderDetail SaleOrder
-            
-            var contextoBD = _context.S.Include
-                (c => c.Cus).
-                ThenInclude(o => o.OrderDetails).ThenInclude(od => od.Product);
             return View(await contextoBD.ToListAsync());
         }
 

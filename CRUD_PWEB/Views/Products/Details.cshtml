@@ -14,16 +14,16 @@
             @Html.DisplayFor(model => model.ProductName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit)
+            @Html.DisplayNameFor(model => model.UnitPrice)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit)
+            @Html.DisplayFor(model => model.UnitPrice)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.QuantityPerUnit)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
+            @Html.DisplayFor(model => model.QuantityPerUnit)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Category)
@@ -37,7 +37,7 @@
         </dt>
         <dd class="col-sm-10">
             <!-- Muestra el Nombre del Proveedor en lugar del ID -->
-            @Html.DisplayFor(model => model.Supplier.SupplierName)
+            @Html.DisplayFor(model => model.Supplier.CompanyName)
         </dd>
     </dl>
 </div>
