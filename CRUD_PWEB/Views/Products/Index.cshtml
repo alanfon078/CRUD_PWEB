@@ -17,10 +17,10 @@
                 @Html.DisplayNameFor(model => model.ProductName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Unit)
+                @Html.DisplayNameFor(model => model.UnitPrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.UnitPrice)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Category)
@@ -39,16 +39,16 @@
                     @Html.DisplayFor(modelItem => item.ProductName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Unit)
+                    @Html.DisplayFor(modelItem => item.QuantityPerUnit)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price)
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Category.CategoryName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
+                    @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
                 </td>
                 <td>
                     <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@item.ProductId">Editar</a> |

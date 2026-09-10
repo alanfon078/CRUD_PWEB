@@ -1,6 +1,6 @@
 ﻿namespace CRUD_PWEB.Models
 {
-    public class ConsumoCLiente
+    public class ConsumoCliente
     {
         public String Cliente { get; set; }
         public String Product { get; set; }
